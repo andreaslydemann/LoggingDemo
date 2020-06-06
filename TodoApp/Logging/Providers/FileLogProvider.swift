@@ -5,8 +5,10 @@ public class FileLogProvider: LogProvider {
     var filePath: String
     private var fileHandle: FileHandle?
     private var queue: DispatchQueue
+    private var dateFormatter: DateFormatter
     
-    public init(filePath: String) {
+    public init(dateFormatter: DateFormatter, filePath: String) {
+        self.dateFormatter = dateFormatter
         self.filePath = filePath
         self.queue = DispatchQueue(label: "File output")
     }

@@ -1,23 +1,14 @@
 import Foundation
 
 public struct ConsoleLogProvider: LogProvider {
-    static var dateFormat = "yyyy-MM-dd HH:mm:ssSSS"
-    static var dateFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = dateFormat
-        formatter.locale = Locale.current
-        formatter.timeZone = TimeZone.current
-        return formatter
+    
+    private var dateFormatter: DateFormatter
+    
+    public init(dateFormatter: DateFormatter) {
+        self.dateFormatter = dateFormatter
     }
     
     public func log(_ event: LogEvent, msg: String, file: String, function: String, line: Int) {
-        print("\(Date().toString()) \(event.rawValue)[\(file)]:\(line) \(function) -> \(msg)")
+        print("\(dateFormatter.getCurrentDateAsString()) \(event.rawValue)[\(file)]:\(line) \(function) -> \(msg)")
     }
 }
-
-internal extension Date {
-    func toString() -> String {
-        return ConsoleLogProvider.dateFormatter.string(from: self as Date)
-    }
-}
-
