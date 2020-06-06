@@ -1,7 +1,6 @@
 import Foundation
 
 public struct ConsoleLogProvider: LogProvider {
-    
     static var dateFormat = "yyyy-MM-dd HH:mm:ssSSS"
     static var dateFormatter: DateFormatter {
         let formatter = DateFormatter()

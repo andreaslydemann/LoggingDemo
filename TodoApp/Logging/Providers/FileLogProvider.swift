@@ -40,5 +40,4 @@ public class FileLogProvider: LogProvider {
         
         return fileHandle
     }
-
 }
