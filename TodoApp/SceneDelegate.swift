@@ -14,7 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let logDateFormatter = LogDateFormatter(dateFormat: "yyyy-MM-dd HH:mm:ssSSS")
         LogService.register(provider: ConsoleLogProvider(dateFormatter: logDateFormatter))
         LogService.register(provider: FileLogProvider(dateFormatter: logDateFormatter,
-                                                      fileWriter: LogFileWriter(filePath: "/Users/andreaslydemann/Desktop/MyLog.txt")))
+                                                      fileWriter: LogFileWriter(filePath: "/Users/andreaslydemann/Desktop/TodoAppLog.txt")))
 
         let categoryVC = CategoryViewController(coreDataConnection: .shared, logService: .shared)
         

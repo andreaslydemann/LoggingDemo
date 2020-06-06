@@ -10,7 +10,7 @@ public struct FileLogProvider: LogProvider {
         self.fileWriter = fileWriter
     }
     
-    public func log(_ event: LogEvent, msg: String, file: String, function: String, line: Int) {
-        fileWriter.write(("\(dateFormatter.getCurrentDateAsString()) \(event.rawValue)[\(file)]:\(line) \(function) -> \(msg)"))
+    public func log(_ event: LogEvent, message: String, file: String, function: String, line: Int) {
+        fileWriter.write("[\(event.rawValue) \(dateFormatter.getCurrentDateAsString()) \(file):\(function):\(line)] \(message)")
     }
 }

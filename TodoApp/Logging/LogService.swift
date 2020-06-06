@@ -13,37 +13,37 @@ public final class LogService {
         providers.append(provider)
     }
     
-    func info(_ object: Any, filename: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+    func info(_ object: Any, filename: String = #file, funcName: String = #function, line: Int = #line) {
         LogService.providers.forEach {
-            $0.log(.info, msg: ("\(object)"), file: LogService.sourceFileName(filePath: filename), function: funcName, line: line)
+            $0.log(.info, message: ("\(object)"), file: LogService.fileName(filePath: filename), function: funcName, line: line)
         }
     }
     
-    func debug(_ object: Any, filename: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+    func debug(_ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
         LogService.providers.forEach {
-            $0.log(.debug, msg: ("\(object)"), file: LogService.sourceFileName(filePath: filename), function: funcName, line: line)
+            $0.log(.debug, message: ("\(object)"), file: LogService.fileName(filePath: filename), function: funcName, line: line)
         }
     }
     
-    func verbose(_ object: Any, filename: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+    func verbose(_ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
         LogService.providers.forEach {
-            $0.log(.verbose, msg: ("\(object)"), file: LogService.sourceFileName(filePath: filename), function: funcName, line: line)
+            $0.log(.verbose, message: ("\(object)"), file: LogService.fileName(filePath: filename), function: funcName, line: line)
         }
     }
     
-    func warning(_ object: Any, filename: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+    func warning(_ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
         LogService.providers.forEach {
-            $0.log(.warning, msg: ("\(object)"), file: LogService.sourceFileName(filePath: filename), function: funcName, line: line)
+            $0.log(.warning, message: ("\(object)"), file: LogService.fileName(filePath: filename), function: funcName, line: line)
         }
     }
     
-    func error(_ object: Any, filename: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+    func error(_ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
         LogService.providers.forEach {
-            $0.log(.error, msg: ("\(object)"), file: LogService.sourceFileName(filePath: filename), function: funcName, line: line)
+            $0.log(.error, message: ("\(object)"), file: LogService.fileName(filePath: filename), function: funcName, line: line)
         }
     }
     
-    private static func sourceFileName(filePath: String) -> String {
+    private static func fileName(filePath: String) -> String {
         let components = filePath.components(separatedBy: "/")
         return components.isEmpty ? "" : components.last!
     }

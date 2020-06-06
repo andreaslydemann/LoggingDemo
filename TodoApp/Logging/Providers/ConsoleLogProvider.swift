@@ -8,7 +8,7 @@ public struct ConsoleLogProvider: LogProvider {
         self.dateFormatter = dateFormatter
     }
     
-    public func log(_ event: LogEvent, msg: String, file: String, function: String, line: Int) {
-        print("\(dateFormatter.getCurrentDateAsString()) \(event.rawValue)[\(file)]:\(line) \(function) -> \(msg)")
+    public func log(_ event: LogEvent, message: String, file: String, function: String, line: Int) {
+        print("[\(event.rawValue) \(dateFormatter.getCurrentDateAsString()) \(file):\(function):\(line)] \(message)")
     }
 }

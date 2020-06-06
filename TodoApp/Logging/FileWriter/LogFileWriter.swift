@@ -1,6 +1,6 @@
 import Foundation
 
-final public class LogFileWriter: FileWriter {
+public final class LogFileWriter: FileWriter {
     
     private var filePath: String
     private var fileHandle: FileHandle?
