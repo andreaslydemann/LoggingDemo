@@ -2,13 +2,13 @@ import Foundation
 
 final public class LogFileWriter: FileWriter {
     
-    var filePath: String
+    private var filePath: String
     private var fileHandle: FileHandle?
     private var queue: DispatchQueue
     
     init(filePath: String) {
         self.filePath = filePath
-        self.queue = DispatchQueue(label: "File output")
+        self.queue = DispatchQueue(label: "Log File")
     }
     
     deinit {
@@ -16,8 +16,7 @@ final public class LogFileWriter: FileWriter {
     }
     
     public func write(_ message: String) {
-        queue.sync(execute: {
-            [weak self] in
+        queue.sync(execute: { [weak self] in
             if let file = self?.getFileHandle() {
                 let printed = message + "\n"
                 if let data = printed.data(using: String.Encoding.utf8) {

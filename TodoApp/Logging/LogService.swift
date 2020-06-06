@@ -43,7 +43,7 @@ public final class LogService {
         }
     }
     
-    private class func sourceFileName(filePath: String) -> String {
+    private static func sourceFileName(filePath: String) -> String {
         let components = filePath.components(separatedBy: "/")
         return components.isEmpty ? "" : components.last!
     }
