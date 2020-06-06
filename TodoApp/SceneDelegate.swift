@@ -13,7 +13,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let logDateFormatter = LogDateFormatter()
         LogService.register(provider: ConsoleLogProvider(dateFormatter: logDateFormatter))
-        LogService.register(provider: FileLogProvider(dateFormatter: logDateFormatter, filePath: "/Users/andreaslydemann/Desktop/MyLog.txt"))
+        LogService.register(provider: FileLogProvider(dateFormatter: logDateFormatter,
+                                                      fileWriter: LogFileWriter(filePath: "/Users/andreaslydemann/Desktop/MyLog.txt")))
 
         let categoryVC = CategoryViewController(coreDataConnection: .shared, logService: .shared)
         
