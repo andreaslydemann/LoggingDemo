@@ -3,11 +3,14 @@ import Foundation
 public struct FileLogProvider: LogProvider {
     
     private var dateFormatter: DateFormatter
-    private var fileWriter: FileWriter
+    public var fileWriter: FileWriter
+    public var logLevel: LogLevel
     
-    public init(dateFormatter: DateFormatter, fileWriter: FileWriter) {
+    public init(dateFormatter: DateFormatter, fileWriter: FileWriter, logLevel: LogLevel = .all) {
         self.dateFormatter = dateFormatter
         self.fileWriter = fileWriter
+        self.logLevel = logLevel
+        
     }
     
     public func log(_ event: LogEvent, message: String, file: String, function: String, line: Int) {

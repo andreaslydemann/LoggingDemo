@@ -2,11 +2,11 @@ import Foundation
 
 public final class LogFileWriter: FileWriter {
     
-    private var filePath: String
-    private var fileHandle: FileHandle?
+    public var filePath: String
+    public var fileHandle: FileHandle?
     private var queue: DispatchQueue
     
-    init(filePath: String) {
+    public init(filePath: String) {
         self.filePath = filePath
         self.queue = DispatchQueue(label: "Log File")
     }

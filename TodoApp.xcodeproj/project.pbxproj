@@ -7,14 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8E1E05AA248BD570006F5DAF /* LogDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1E05A9248BD570006F5DAF /* LogDateFormatter.swift */; };
-		8E1E05AD248BD979006F5DAF /* FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1E05AC248BD979006F5DAF /* FileWriter.swift */; };
-		8E1E05AF248BD981006F5DAF /* LogFileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1E05AE248BD981006F5DAF /* LogFileWriter.swift */; };
-		8E2CA0D12487886900121228 /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2CA0D02487886900121228 /* LogService.swift */; };
-		8E2CA0D32487887100121228 /* LogEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2CA0D22487887100121228 /* LogEvent.swift */; };
-		8E2CA0D52487888B00121228 /* LogProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2CA0D42487888B00121228 /* LogProvider.swift */; };
-		8E2CA0D7248788A000121228 /* ConsoleLogProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2CA0D6248788A000121228 /* ConsoleLogProvider.swift */; };
-		8E2CA0D92487897100121228 /* FileLogProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2CA0D82487897100121228 /* FileLogProvider.swift */; };
 		8E56FF3223C223BD007B32D1 /* ColorTheme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E56FF3123C223BD007B32D1 /* ColorTheme.xcassets */; };
 		8E95145B23C117B70012D76D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E95145A23C117B70012D76D /* AppDelegate.swift */; };
 		8E95145D23C117B70012D76D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E95145C23C117B70012D76D /* SceneDelegate.swift */; };
@@ -26,17 +18,20 @@
 		8E95147B23C148E00012D76D /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E95147A23C148E00012D76D /* UIColor+Ext.swift */; };
 		8E95147D23C153400012D76D /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E95147C23C153400012D76D /* UITableView+Ext.swift */; };
 		8ECA6B9F23E867A3004CD49E /* CoreDataConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA6B9E23E867A3004CD49E /* CoreDataConnection.swift */; };
+		E966A6A82493EB66001D5D51 /* LogDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966A69B2493EB66001D5D51 /* LogDateFormatter.swift */; };
+		E966A6A92493EB66001D5D51 /* FileLogProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966A69D2493EB66001D5D51 /* FileLogProvider.swift */; };
+		E966A6AA2493EB66001D5D51 /* LogProviderConformingToLogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966A69E2493EB66001D5D51 /* LogProviderConformingToLogLevel.swift */; };
+		E966A6AB2493EB66001D5D51 /* LogProviderWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966A69F2493EB66001D5D51 /* LogProviderWrapper.swift */; };
+		E966A6AC2493EB66001D5D51 /* ConsoleLogProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966A6A02493EB66001D5D51 /* ConsoleLogProvider.swift */; };
+		E966A6AD2493EB66001D5D51 /* LogProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966A6A12493EB66001D5D51 /* LogProvider.swift */; };
+		E966A6AE2493EB66001D5D51 /* FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966A6A32493EB66001D5D51 /* FileWriter.swift */; };
+		E966A6AF2493EB66001D5D51 /* LogFileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966A6A42493EB66001D5D51 /* LogFileWriter.swift */; };
+		E966A6B02493EB66001D5D51 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966A6A52493EB66001D5D51 /* LogLevel.swift */; };
+		E966A6B12493EB66001D5D51 /* LogEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966A6A62493EB66001D5D51 /* LogEvent.swift */; };
+		E966A6B22493EB66001D5D51 /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966A6A72493EB66001D5D51 /* LogService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8E1E05A9248BD570006F5DAF /* LogDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDateFormatter.swift; sourceTree = "<group>"; };
-		8E1E05AC248BD979006F5DAF /* FileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWriter.swift; sourceTree = "<group>"; };
-		8E1E05AE248BD981006F5DAF /* LogFileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFileWriter.swift; sourceTree = "<group>"; };
-		8E2CA0D02487886900121228 /* LogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
-		8E2CA0D22487887100121228 /* LogEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEvent.swift; sourceTree = "<group>"; };
-		8E2CA0D42487888B00121228 /* LogProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogProvider.swift; sourceTree = "<group>"; };
-		8E2CA0D6248788A000121228 /* ConsoleLogProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleLogProvider.swift; sourceTree = "<group>"; };
-		8E2CA0D82487897100121228 /* FileLogProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLogProvider.swift; sourceTree = "<group>"; };
 		8E56FF3123C223BD007B32D1 /* ColorTheme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorTheme.xcassets; sourceTree = "<group>"; };
 		8E95145723C117B70012D76D /* TodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E95145A23C117B70012D76D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +45,17 @@
 		8E95147A23C148E00012D76D /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		8E95147C23C153400012D76D /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		8ECA6B9E23E867A3004CD49E /* CoreDataConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConnection.swift; sourceTree = "<group>"; };
+		E966A69B2493EB66001D5D51 /* LogDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogDateFormatter.swift; sourceTree = "<group>"; };
+		E966A69D2493EB66001D5D51 /* FileLogProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileLogProvider.swift; sourceTree = "<group>"; };
+		E966A69E2493EB66001D5D51 /* LogProviderConformingToLogLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogProviderConformingToLogLevel.swift; sourceTree = "<group>"; };
+		E966A69F2493EB66001D5D51 /* LogProviderWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogProviderWrapper.swift; sourceTree = "<group>"; };
+		E966A6A02493EB66001D5D51 /* ConsoleLogProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleLogProvider.swift; sourceTree = "<group>"; };
+		E966A6A12493EB66001D5D51 /* LogProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogProvider.swift; sourceTree = "<group>"; };
+		E966A6A32493EB66001D5D51 /* FileWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileWriter.swift; sourceTree = "<group>"; };
+		E966A6A42493EB66001D5D51 /* LogFileWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFileWriter.swift; sourceTree = "<group>"; };
+		E966A6A52493EB66001D5D51 /* LogLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
+		E966A6A62493EB66001D5D51 /* LogEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogEvent.swift; sourceTree = "<group>"; };
+		E966A6A72493EB66001D5D51 /* LogService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,45 +69,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8E1E05AB248BD961006F5DAF /* FileWriter */ = {
-			isa = PBXGroup;
-			children = (
-				8E1E05AC248BD979006F5DAF /* FileWriter.swift */,
-				8E1E05AE248BD981006F5DAF /* LogFileWriter.swift */,
-			);
-			path = FileWriter;
-			sourceTree = "<group>";
-		};
-		8E1E05B0248BD9CD006F5DAF /* DateFormatter */ = {
-			isa = PBXGroup;
-			children = (
-				8E1E05A9248BD570006F5DAF /* LogDateFormatter.swift */,
-			);
-			path = DateFormatter;
-			sourceTree = "<group>";
-		};
-		8E2CA0CE2487884800121228 /* Logging */ = {
-			isa = PBXGroup;
-			children = (
-				8E1E05B0248BD9CD006F5DAF /* DateFormatter */,
-				8E1E05AB248BD961006F5DAF /* FileWriter */,
-				8E2CA0CF2487885500121228 /* Providers */,
-				8E2CA0D02487886900121228 /* LogService.swift */,
-				8E2CA0D22487887100121228 /* LogEvent.swift */,
-			);
-			path = Logging;
-			sourceTree = "<group>";
-		};
-		8E2CA0CF2487885500121228 /* Providers */ = {
-			isa = PBXGroup;
-			children = (
-				8E2CA0D42487888B00121228 /* LogProvider.swift */,
-				8E2CA0D6248788A000121228 /* ConsoleLogProvider.swift */,
-				8E2CA0D82487897100121228 /* FileLogProvider.swift */,
-			);
-			path = Providers;
-			sourceTree = "<group>";
-		};
 		8E95144E23C117B70012D76D = {
 			isa = PBXGroup;
 			children = (
@@ -123,7 +90,7 @@
 			children = (
 				8E95145A23C117B70012D76D /* AppDelegate.swift */,
 				8E95145C23C117B70012D76D /* SceneDelegate.swift */,
-				8E2CA0CE2487884800121228 /* Logging */,
+				E966A6992493EB66001D5D51 /* Logging */,
 				8E95147123C119720012D76D /* Controllers */,
 				8E95147323C1197F0012D76D /* Resources */,
 				8E95147923C148CB0012D76D /* Utilities */,
@@ -160,6 +127,48 @@
 				8ECA6B9E23E867A3004CD49E /* CoreDataConnection.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E966A6992493EB66001D5D51 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				E966A69A2493EB66001D5D51 /* DateFormatter */,
+				E966A69C2493EB66001D5D51 /* Providers */,
+				E966A6A22493EB66001D5D51 /* FileWriter */,
+				E966A6A52493EB66001D5D51 /* LogLevel.swift */,
+				E966A6A62493EB66001D5D51 /* LogEvent.swift */,
+				E966A6A72493EB66001D5D51 /* LogService.swift */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		E966A69A2493EB66001D5D51 /* DateFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				E966A69B2493EB66001D5D51 /* LogDateFormatter.swift */,
+			);
+			path = DateFormatter;
+			sourceTree = "<group>";
+		};
+		E966A69C2493EB66001D5D51 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				E966A69D2493EB66001D5D51 /* FileLogProvider.swift */,
+				E966A69E2493EB66001D5D51 /* LogProviderConformingToLogLevel.swift */,
+				E966A69F2493EB66001D5D51 /* LogProviderWrapper.swift */,
+				E966A6A02493EB66001D5D51 /* ConsoleLogProvider.swift */,
+				E966A6A12493EB66001D5D51 /* LogProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		E966A6A22493EB66001D5D51 /* FileWriter */ = {
+			isa = PBXGroup;
+			children = (
+				E966A6A32493EB66001D5D51 /* FileWriter.swift */,
+				E966A6A42493EB66001D5D51 /* LogFileWriter.swift */,
+			);
+			path = FileWriter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,22 +242,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E2CA0D52487888B00121228 /* LogProvider.swift in Sources */,
 				8E95147723C11A040012D76D /* CategoryViewController.swift in Sources */,
-				8E2CA0D92487897100121228 /* FileLogProvider.swift in Sources */,
+				E966A6B02493EB66001D5D51 /* LogLevel.swift in Sources */,
 				8E95145B23C117B70012D76D /* AppDelegate.swift in Sources */,
 				8E95145D23C117B70012D76D /* SceneDelegate.swift in Sources */,
-				8E2CA0D32487887100121228 /* LogEvent.swift in Sources */,
 				8E95147B23C148E00012D76D /* UIColor+Ext.swift in Sources */,
-				8E2CA0D12487886900121228 /* LogService.swift in Sources */,
 				8E95147D23C153400012D76D /* UITableView+Ext.swift in Sources */,
 				8E95146523C117B70012D76D /* TodoApp.xcdatamodeld in Sources */,
+				E966A6B22493EB66001D5D51 /* LogService.swift in Sources */,
+				E966A6AA2493EB66001D5D51 /* LogProviderConformingToLogLevel.swift in Sources */,
 				8ECA6B9F23E867A3004CD49E /* CoreDataConnection.swift in Sources */,
-				8E1E05AA248BD570006F5DAF /* LogDateFormatter.swift in Sources */,
-				8E1E05AD248BD979006F5DAF /* FileWriter.swift in Sources */,
-				8E1E05AF248BD981006F5DAF /* LogFileWriter.swift in Sources */,
+				E966A6A92493EB66001D5D51 /* FileLogProvider.swift in Sources */,
+				E966A6AD2493EB66001D5D51 /* LogProvider.swift in Sources */,
+				E966A6AB2493EB66001D5D51 /* LogProviderWrapper.swift in Sources */,
+				E966A6A82493EB66001D5D51 /* LogDateFormatter.swift in Sources */,
+				E966A6B12493EB66001D5D51 /* LogEvent.swift in Sources */,
+				E966A6AE2493EB66001D5D51 /* FileWriter.swift in Sources */,
+				E966A6AF2493EB66001D5D51 /* LogFileWriter.swift in Sources */,
+				E966A6AC2493EB66001D5D51 /* ConsoleLogProvider.swift in Sources */,
 				8E95147823C11A040012D76D /* ItemListViewController.swift in Sources */,
-				8E2CA0D7248788A000121228 /* ConsoleLogProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XX77A4QKHR;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TodoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -403,7 +415,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XX77A4QKHR;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TodoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

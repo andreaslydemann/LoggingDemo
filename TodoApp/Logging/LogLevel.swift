@@ -1,18 +1,14 @@
-// See: https://github.com/andreaslydemann/LoggingDemo
-
 import Foundation
 
-public enum LogEvent: String {
-    case verbose = "📣"
-    case debug = "📝"
-    case info = "ℹ️"
-    case warning = "⚠️"
-    case error = "☠️"
+public enum LogLevel: Int {
+    case all = 0, verbose, debug, info, warning, error
 }
 
-extension LogEvent {
-    var logLevel: LogLevel {
+extension LogLevel {
+    var logEvent: LogEvent {
         switch self {
+        case .all:
+            return .verbose
         case .verbose:
             return .verbose
         case .debug:

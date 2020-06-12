@@ -137,6 +137,12 @@ extension ItemListViewController {
             
             self.saveItems()
             self.tableView.reloadData()
+            
+            if let title = newItem.title {
+                LogService.shared.debug("Item [\(title)] was added.")
+            } else {
+                LogService.shared.debug("Item was added with no title.")
+            }
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)

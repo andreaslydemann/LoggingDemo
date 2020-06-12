@@ -1,46 +1,67 @@
 import Foundation
 
 public final class LogService {
-    private static var providers = [LogProvider]()
+    public static var providers = [LogProvider]()
     
-    static let shared = LogService(providers: providers)
+    static public let shared = LogService(providers: providers)
     
     private init(providers: [LogProvider]) {
         LogService.providers = providers
     }
     
-    static func register(provider: LogProvider) {
+    static public func register(provider: LogProvider) {
         providers.append(provider)
     }
     
-    func info(_ object: Any, filename: String = #file, funcName: String = #function, line: Int = #line) {
+    static public func registerConformingToLogLevels(provider: LogProvider) {
+        let finalProvider = provider.conformingToLogLevels()
+        providers.append(finalProvider)
+    }
+    
+    private func log(_ logLevel: LogLevel, _ object: Any, filename: String, funcName: String, line: Int) {
         LogService.providers.forEach {
-            $0.log(.info, message: ("\(object)"), file: LogService.fileName(filePath: filename), function: funcName, line: line)
+            $0.log(logLevel.logEvent, message: ("\(object)"), file: LogService.fileName(filePath: filename), function: funcName, line: line)
         }
     }
     
-    func debug(_ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
-        LogService.providers.forEach {
-            $0.log(.debug, message: ("\(object)"), file: LogService.fileName(filePath: filename), function: funcName, line: line)
-        }
+    public func info(_ object: Any, filename: String = #file, funcName: String = #function, line: Int = #line) {
+        self.log(.info, object, filename: filename, funcName: funcName, line: line)
     }
     
-    func verbose(_ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
-        LogService.providers.forEach {
-            $0.log(.verbose, message: ("\(object)"), file: LogService.fileName(filePath: filename), function: funcName, line: line)
-        }
+    public func debug(_ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
+        self.log(.debug, object, filename: filename, funcName: funcName, line: line)
     }
     
-    func warning(_ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
-        LogService.providers.forEach {
-            $0.log(.warning, message: ("\(object)"), file: LogService.fileName(filePath: filename), function: funcName, line: line)
-        }
+    public func verbose(_ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
+        self.log(.verbose, object, filename: filename, funcName: funcName, line: line)
     }
     
-    func error(_ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
-        LogService.providers.forEach {
-            $0.log(.error, message: ("\(object)"), file: LogService.fileName(filePath: filename), function: funcName, line: line)
+    public func warning(_ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
+        self.log(.warning, object, filename: filename, funcName: funcName, line: line)
+    }
+    
+    public func error(_ object: Any, filename: String = #file, line: Int = #line, funcName: String = #function) {
+        self.log(.error, object, filename: filename, funcName: funcName, line: line)
+    }
+    
+    public func activeProviders<T: LogProvider>(type: T.Type) -> [T] {
+        
+        var returnProviders: [T] = []
+        
+        LogService.providers.forEach { (provider) in
+            
+            var coreProvider: LogProvider = provider
+            
+            while let cp = coreProvider as? LogProviderWrapper {
+                coreProvider = cp.wrapping
+            }
+            
+            if let cp = coreProvider as? T {
+                returnProviders.append(cp)
+            }
         }
+        
+        return returnProviders
     }
     
     private static func fileName(filePath: String) -> String {
