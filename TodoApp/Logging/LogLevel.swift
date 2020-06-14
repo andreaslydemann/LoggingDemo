@@ -1,24 +1,20 @@
 import Foundation
 
 public enum LogLevel: Int {
-    case all = 0, verbose, debug, info, warning, error
-}
+    case verbose, debug, info, warning, error
 
-extension LogLevel {
-    var logEvent: LogEvent {
+    var string: String {
         switch self {
-        case .all:
-            return .verbose
         case .verbose:
-            return .verbose
+            return "📣"
         case .debug:
-            return .debug
+            return "📝"
         case .info:
-            return .info
+            return "ℹ️"
         case .warning:
-            return .warning
+            return "⚠️"
         case .error:
-            return .error
+            return "☠️"
         }
     }
 }

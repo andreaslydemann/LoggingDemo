@@ -2,15 +2,13 @@ import Foundation
 
 public struct ConsoleLogProvider: LogProvider {
     
-    public var logLevel: LogLevel
     private var dateFormatter: DateFormatter
     
-    public init(dateFormatter: DateFormatter, logLevel: LogLevel = .all) {
+    public init(dateFormatter: DateFormatter) {
         self.dateFormatter = dateFormatter
-        self.logLevel = logLevel
     }
     
-    public func log(_ event: LogEvent, message: String, file: String, function: String, line: Int) {
-        print("[\(event.rawValue) \(dateFormatter.getCurrentDateAsString()) \(file):\(function):\(line)] \(message)")
+    public func log(_ logLevel: LogLevel, message: String, file: String, function: String, line: Int) {
+        print("[\(logLevel.string)) \(dateFormatter.getCurrentDateAsString()) \(file):\(function):\(line)] \(message)")
     }
 }

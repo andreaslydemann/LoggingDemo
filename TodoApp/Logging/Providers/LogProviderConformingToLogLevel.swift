@@ -8,27 +8,26 @@
 
 import Foundation
 
-struct LogLevelConformingToLogLevel: LogProviderWrapper {
+struct LogProviderFilteringToMinimumLogLevel: LogProviderWrapper {
     
     var wrapping: LogProvider
+    var minimumLogLevel: LogLevel
     
-    var logLevel: LogLevel {
-        return wrapping.logLevel
-    }
-    
-    init(wrapping: LogProvider) {
+    init(wrapping: LogProvider, minimumLogLevel: LogLevel) {
         self.wrapping = wrapping
+        self.minimumLogLevel = minimumLogLevel
     }
     
-    func log(_ event: LogEvent, message: String, file: String, function: String, line: Int) {
-        if event.logLevel.rawValue >= logLevel.rawValue {
-            wrapping.log(event, message: message, file: file, function: function, line: line)
+    func log(_ messageLogLevel: LogLevel, message: String, file: String, function: String, line: Int) {
+        if messageLogLevel.rawValue >= minimumLogLevel.rawValue {
+            wrapping.log(messageLogLevel, message: message, file: file, function: function, line: line)
         }
     }
 }
 
 extension LogProvider {
-    func conformingToLogLevels() -> LogProvider {
-        return LogLevelConformingToLogLevel(wrapping: self)
+    func filterToLogLevel(minimumLogLevel: LogLevel) -> LogProvider {
+        return LogProviderFilteringToMinimumLogLevel(wrapping: self,
+                                                     minimumLogLevel: minimumLogLevel)
     }
 }

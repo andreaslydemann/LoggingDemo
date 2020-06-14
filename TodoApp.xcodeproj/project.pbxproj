@@ -27,7 +27,6 @@
 		E966A6AE2493EB66001D5D51 /* FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966A6A32493EB66001D5D51 /* FileWriter.swift */; };
 		E966A6AF2493EB66001D5D51 /* LogFileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966A6A42493EB66001D5D51 /* LogFileWriter.swift */; };
 		E966A6B02493EB66001D5D51 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966A6A52493EB66001D5D51 /* LogLevel.swift */; };
-		E966A6B12493EB66001D5D51 /* LogEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966A6A62493EB66001D5D51 /* LogEvent.swift */; };
 		E966A6B22493EB66001D5D51 /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966A6A72493EB66001D5D51 /* LogService.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +53,6 @@
 		E966A6A32493EB66001D5D51 /* FileWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileWriter.swift; sourceTree = "<group>"; };
 		E966A6A42493EB66001D5D51 /* LogFileWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFileWriter.swift; sourceTree = "<group>"; };
 		E966A6A52493EB66001D5D51 /* LogLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
-		E966A6A62493EB66001D5D51 /* LogEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogEvent.swift; sourceTree = "<group>"; };
 		E966A6A72493EB66001D5D51 /* LogService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,7 +134,6 @@
 				E966A69C2493EB66001D5D51 /* Providers */,
 				E966A6A22493EB66001D5D51 /* FileWriter */,
 				E966A6A52493EB66001D5D51 /* LogLevel.swift */,
-				E966A6A62493EB66001D5D51 /* LogEvent.swift */,
 				E966A6A72493EB66001D5D51 /* LogService.swift */,
 			);
 			path = Logging;
@@ -256,7 +253,6 @@
 				E966A6AD2493EB66001D5D51 /* LogProvider.swift in Sources */,
 				E966A6AB2493EB66001D5D51 /* LogProviderWrapper.swift in Sources */,
 				E966A6A82493EB66001D5D51 /* LogDateFormatter.swift in Sources */,
-				E966A6B12493EB66001D5D51 /* LogEvent.swift in Sources */,
 				E966A6AE2493EB66001D5D51 /* FileWriter.swift in Sources */,
 				E966A6AF2493EB66001D5D51 /* LogFileWriter.swift in Sources */,
 				E966A6AC2493EB66001D5D51 /* ConsoleLogProvider.swift in Sources */,

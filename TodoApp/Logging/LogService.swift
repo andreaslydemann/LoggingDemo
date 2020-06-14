@@ -13,14 +13,9 @@ public final class LogService {
         providers.append(provider)
     }
     
-    static public func registerConformingToLogLevels(provider: LogProvider) {
-        let finalProvider = provider.conformingToLogLevels()
-        providers.append(finalProvider)
-    }
-    
     private func log(_ logLevel: LogLevel, _ object: Any, filename: String, funcName: String, line: Int) {
         LogService.providers.forEach {
-            $0.log(logLevel.logEvent, message: ("\(object)"), file: LogService.fileName(filePath: filename), function: funcName, line: line)
+            $0.log(logLevel, message: ("\(object)"), file: LogService.fileName(filePath: filename), function: funcName, line: line)
         }
     }
     

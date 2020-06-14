@@ -12,7 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.windowScene = windowScene
         
         let logDateFormatter = LogDateFormatter(dateFormat: "yyyy-MM-dd HH:mm:ssSSS")
-        LogService.registerConformingToLogLevels(provider: ConsoleLogProvider(dateFormatter: logDateFormatter, logLevel: .debug))
+        LogService.register(provider: ConsoleLogProvider(dateFormatter: logDateFormatter))
         
         let documentsUrl = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first! as NSURL
         let logPath = documentsUrl.appendingPathComponent("app.log")
@@ -21,8 +21,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             let path = lp.absoluteString.replacingOccurrences(of: "file://", with: "")
             
-            LogService.register(provider: FileLogProvider(dateFormatter: logDateFormatter,
-                                                          fileWriter: LogFileWriter(filePath:path)))
+            let fileLog = FileLogProvider(dateFormatter: logDateFormatter,
+                                          fileWriter: LogFileWriter(filePath:path))
+                .filterToLogLevel(minimumLogLevel: .info)
+            
+            LogService.register(provider: fileLog)
             
             LogService.shared.debug("FileLogProvider path: [\(path)]")
         }
