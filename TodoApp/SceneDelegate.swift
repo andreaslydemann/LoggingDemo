@@ -13,8 +13,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let logDateFormatter = LogDateFormatter(dateFormat: "yyyy-MM-dd HH:mm:ssSSS")
         LogService.register(provider: ConsoleLogProvider(dateFormatter: logDateFormatter))
-        LogService.register(provider: FileLogProvider(dateFormatter: logDateFormatter,
-                                                      fileWriter: LogFileWriter(filePath: "/Users/andreaslydemann/Desktop/TodoAppLog.txt")))
+        
+        let documentsUrl = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first! as NSURL
+        let logPath = documentsUrl.appendingPathComponent("app.log")
+        
+        if let lp = logPath {
+            
+            let path = lp.absoluteString.replacingOccurrences(of: "file://", with: "")
+            
+            let fileLog = FileLogProvider(dateFormatter: logDateFormatter,
+                                          fileWriter: LogFileWriter(filePath:path))
+                .filterToLogLevel(minimumLogLevel: .info)
+            
+            LogService.register(provider: fileLog)
+            
+            LogService.shared.debug("FileLogProvider path: [\(path)]")
+        }
 
         let categoryVC = CategoryViewController(coreDataConnection: .shared, logService: .shared)
         
